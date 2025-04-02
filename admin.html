@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GarzaDev Admin</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .admin-container {
+      max-width: 700px;
+      margin: 60px auto;
+      background-color: #1e293b;
+      padding: 30px;
+      border-radius: 12px;
+      color: #e2e8f0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    h2 {
+      color: #38bdf8;
+    }
+
+    textarea {
+      width: 100%;
+      height: 120px;
+      padding: 10px;
+      font-size: 1rem;
+      background: #0f172a;
+      color: #f8fafc;
+      border: 1px solid #334155;
+      border-radius: 8px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #38bdf8;
+      color: #0f172a;
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0ea5e9;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .login-box {
+      text-align: center;
+      margin-top: 100px;
+    }
+
+    input[type="password"] {
+      padding: 10px;
+      font-size: 1rem;
+      border-radius: 6px;
+      border: 1px solid #334155;
+      background-color: #0f172a;
+      color: #e2e8f0;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-box" id="login-box">
+    <h2>🔐 Admin Login</h2>
+    <p>Enter password to access GarzaDev admin panel:</p>
+    <input type="password" id="admin-password" placeholder="Enter password" />
+    <br /><br />
+    <button onclick="checkPassword()">Login</button>
+  </div>
+
+  <div class="admin-container hidden" id="admin-panel">
+    <h2>💻 GarzaDev Admin Panel</h2>
+
+    <div>
+      <h3>✏️ Edit Dev Daily Message</h3>
+      <textarea id="devMessageBox">Loading current message...</textarea>
+      <button onclick="saveDevMessage()">Save Message</button>
+    </div>
+
+    <div>
+      <h3>🛠️ Project Notes</h3>
+      <textarea id="projectBox">You can add or track your project ideas here...</textarea>
+      <button onclick="saveProjects()">Save Notes</button>
+    </div>
+  </div>
+
+  <script>
+    const correctPassword = "K@ilyg84"; // Change this to your own password
+
+    function checkPassword() {
+      const input = document.getElementById("admin-password").value;
+      if (input === correctPassword) {
+        document.getElementById("login-box").style.display = "none";
+        document.getElementById("admin-panel").classList.remove("hidden");
+        loadLocalData();
+      } else {
+        alert("Incorrect password. Try again.");
+      }
+    }
+
+    function saveDevMessage() {
+      const message = document.getElementById("devMessageBox").value;
+      localStorage.setItem("devDaily", message);
+      alert("Dev Daily message saved locally!");
+    }
+
+    function saveProjects() {
+      const notes = document.getElementById("projectBox").value;
+      localStorage.setItem("projectNotes", notes);
+      alert("Project notes saved locally!");
+    }
+
+    function loadLocalData() {
+      const savedMessage = localStorage.getItem("devDaily");
+      const savedProjects = localStorage.getItem("projectNotes");
+      if (savedMessage) document.getElementById("devMessageBox").value = savedMessage;
+      if (savedProjects) document.getElementById("projectBox").value = savedProjects;
+    }
+  </script>
+</body>
+</html>
