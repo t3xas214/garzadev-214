@@ -26,7 +26,7 @@
     <h1>GarzaDev</h1>
   </div>
 
-  <p>Welcome to my dev space. I'm currently building something awesome here. Stay tuned! 🚀</p>
+  <p>Welcome to my dev space! I'm Heriberto — a telecom construction coordinator and computer science student. I created GarzaDev to document my programming journey, share useful tools, and post coding projects I'm working on with Python.</p>
 
   <!-- ✅ Dev Daily Card -->
   <div class="dev-daily">
@@ -52,6 +52,26 @@
   </footer>
 
   <script>
+    // Dev Daily messages
+    const messages = [
+      "“First, solve the problem. Then, write the code.” – John Johnson",
+      "Why do programmers hate nature? It has too many bugs.",
+      "“Experience is the name everyone gives to their mistakes.” – Oscar Wilde",
+      "There are 10 types of people in the world: those who understand binary and those who don’t.",
+      "“Programs must be written for people to read, and only incidentally for machines to execute.” – Harold Abelson",
+      "Why did the developer go broke? Because he used up all his cache.",
+      "“Talk is cheap. Show me the code.” – Linus Torvalds",
+      "Why was the JavaScript developer sad? Because he didn’t ‘null’ his feelings."
+    ];
+
+    function showDailyMessage() {
+      const index = new Date().getDate() % messages.length;
+      document.getElementById("daily-message").textContent = messages[index];
+    }
+
+    showDailyMessage();
+
+    // Footer year
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
