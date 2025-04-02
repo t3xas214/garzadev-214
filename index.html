@@ -9,8 +9,7 @@
   <title>GarzaDev | Dev Space</title>
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <link rel="stylesheet" href="style.css" />
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2317665335147982"
-    crossorigin="anonymous"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2317665335147982" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -67,7 +66,14 @@
 
     function showDailyMessage() {
       const index = new Date().getDate() % messages.length;
-      document.getElementById("daily-message").textContent = messages[index];
+      const messageEl = document.getElementById("daily-message");
+      messageEl.textContent = messages[index];
+
+      // Add a spin class for animation
+      const card = document.querySelector(".dev-daily");
+      card.classList.remove("spin");
+      void card.offsetWidth;
+      card.classList.add("spin");
     }
 
     showDailyMessage();
