@@ -97,7 +97,28 @@ footer {
   margin-left: auto;
   margin-right: auto;
   color: #f8fafc;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+/* Optional animated spin on load */
+.dev-daily.spin {
+  animation: spin-in 0.6s ease-in-out;
+}
+
+@keyframes spin-in {
+  0% {
+    transform: rotateY(0deg) scale(0.95);
+    opacity: 0.3;
+  }
+  50% {
+    transform: rotateY(90deg) scale(1.05);
+    opacity: 0.6;
+  }
+  100% {
+    transform: rotateY(0deg) scale(1);
+    opacity: 1;
+  }
 }
 
 .dev-daily h2 {
@@ -109,6 +130,7 @@ footer {
   font-size: 1.1rem;
   font-style: italic;
 }
+
 /* Project Section Styles */
 .project-list {
   display: flex;
@@ -138,4 +160,3 @@ footer {
   color: #e2e8f0;
   line-height: 1.5;
 }
-
