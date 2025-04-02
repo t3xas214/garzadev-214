@@ -86,3 +86,26 @@ footer {
   border-radius: 50%;
   object-fit: cover;
 }
+
+/* Dev Daily Card */
+.dev-daily {
+  background-color: #1e293b;
+  padding: 20px;
+  border-radius: 12px;
+  margin-top: 30px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #f8fafc;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.dev-daily h2 {
+  color: #38bdf8;
+  margin-bottom: 10px;
+}
+
+#daily-message {
+  font-size: 1.1rem;
+  font-style: italic;
+}
