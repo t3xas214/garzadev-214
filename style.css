@@ -3,17 +3,9 @@ body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
-  background-color: #020617; /* Deep background to match header image */
+  background-color: #7a8f9e; /* Updated to match logo background */
   color: #e2e8f0;
   text-align: center;
-}
-
-/* Header banner image */
-.hero-banner {
-  background: url('image.png') no-repeat center center;
-  background-size: contain;
-  height: 150px;
-  margin-bottom: 20px;
 }
 
 /* Header title */
@@ -52,7 +44,7 @@ nav a:hover {
 footer {
   margin-top: 60px;
   font-size: 0.9rem;
-  color: #94a3b8; /* Slightly brighter */
+  color: #94a3b8;
 }
 
 /* Ad space */
@@ -167,4 +159,14 @@ footer {
   font-size: 1rem;
   color: #e2e8f0;
   line-height: 1.5;
+}
+
+/* Header image banner */
+.hero-banner {
+  background: url('image.png') no-repeat center center;
+  background-size: contain;
+  height: 120px;
+  width: 100%;
+  margin-top: 0;
+  margin-bottom: 10px;
 }
