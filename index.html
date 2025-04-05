@@ -13,31 +13,44 @@
 </head>
 
 <body>
-  <!-- 🔥 New banner -->
-  <div class="hero-banner"></div>
-
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="projects.html">Projects</a>
-    <a href="privacy.html">Privacy Policy</a>
-    <a href="terms.html">Terms of Service</a>
-  </nav>
-
-  <p>Welcome to my dev space! I'm Heriberto — a telecom construction coordinator and computer science student. I created GarzaDev to document my programming journey, share useful tools, and post coding projects I'm working on with Python.</p>
-
-  <!-- ✅ Dev Daily Card -->
-  <div class="dev-daily">
-    <h2>💻 Dev Daily</h2>
-    <p id="daily-message">Loading something fun...</p>
+  <!-- 🔥 Top banner as background image -->
+  <div class="hero-banner">
+    <div class="hero-content">
+      <img src="logo.png" alt="GarzaDev Logo" class="site-logo">
+      <h1>GarzaDev</h1>
+      <p class="tagline">Coding my way through tech</p>
+    </div>
   </div>
 
-  <div class="adsense">
-    <p><em>[Ad space - coming soon]</em></p>
+  <!-- 📌 Everything below banner is wrapped in main-content for spacing -->
+  <div class="main-content">
+    
+    <!-- 🔗 Site navigation -->
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+    </nav>
+
+    <!-- 🧑 Intro text -->
+    <p>Welcome to my dev space! I'm Heriberto — a telecom construction coordinator and computer science student. I created GarzaDev to document my programming journey, share useful tools, and post coding projects I'm working on with 🐍Python🐍.</p>
+
+    <!-- 💻 Dev Daily section -->
+    <div class="dev-daily">
+      <h2>💻 Dev Daily</h2>
+      <p id="daily-message">Loading something fun...</p>
+    </div>
+
+    <!-- 📢 Placeholder ad block -->
+    <div class="adsense">
+      <p><em>[Ad space - coming soon]</em></p>
+    </div>
   </div>
 
-  <!-- 
-  Uncomment and update when ready to add social icons
+  <!-- 🔗 Socials (optional for future use) -->
+  <!--
   <div class="social-icons">
     <a href="#" target="_blank"><img src="icons/twitter.svg" alt="Twitter" /></a>
     <a href="#" target="_blank"><img src="icons/github.svg" alt="GitHub" /></a>
@@ -45,12 +58,13 @@
   </div>
   -->
 
+  <!-- 📄 Footer -->
   <footer>
     &copy; <span id="year"></span> GarzaDev | All rights reserved.
   </footer>
 
+  <!-- 📜 JS: Dev Daily + Footer Year -->
   <script>
-    // Dev Daily messages
     const messages = [
       "“First, solve the problem. Then, write the code.” – John Johnson",
       "Why do programmers hate nature? It has too many bugs.",
@@ -67,7 +81,6 @@
       const messageEl = document.getElementById("daily-message");
       messageEl.textContent = messages[index];
 
-      // Add a spin class for animation
       const card = document.querySelector(".dev-daily");
       card.classList.remove("spin");
       void card.offsetWidth;
@@ -75,8 +88,6 @@
     }
 
     showDailyMessage();
-
-    // Footer year
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
